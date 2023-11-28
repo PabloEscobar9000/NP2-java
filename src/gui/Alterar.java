@@ -39,6 +39,8 @@ public class Alterar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtDataNasc = new javax.swing.JTextField();
         btnExcluir = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        txtAlturaAltera = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,13 +63,13 @@ public class Alterar extends javax.swing.JFrame {
 
         tabelaListar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nome", "CPF", "Data Nasc", "Peso"
+                "Nome", "CPF", "Data Nasc", "Peso", "Altura"
             }
         ));
         jScrollPane1.setViewportView(tabelaListar);
@@ -76,6 +78,7 @@ public class Alterar extends javax.swing.JFrame {
 
         jLabel3.setText("CPF");
 
+        txtCpfAlterar.setEnabled(false);
         txtCpfAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCpfAlterarActionPerformed(evt);
@@ -105,6 +108,8 @@ public class Alterar extends javax.swing.JFrame {
                 btnExcluirActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("altura");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,7 +152,10 @@ public class Alterar extends javax.swing.JFrame {
                                     .addComponent(btnCarregar))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtAlturaAltera, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(13, 13, 13)))
                 .addContainerGap())
@@ -161,16 +169,16 @@ public class Alterar extends javax.swing.JFrame {
                 .addComponent(btnListar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
-                .addComponent(btnCarregar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtNomeAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(txtCpfAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(2, 2, 2)
+                .addComponent(btnCarregar)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtNomeAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtPesoAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,7 +189,11 @@ public class Alterar extends javax.swing.JFrame {
                     .addComponent(txtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAlterarAluno))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnExcluir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnExcluir)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(txtAlturaAltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12))
         );
 
@@ -268,8 +280,10 @@ public class Alterar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaListar;
+    private javax.swing.JTextField txtAlturaAltera;
     private javax.swing.JTextField txtCpfAlterar;
     private javax.swing.JTextField txtDataNasc;
     private javax.swing.JTextField txtNomeAlterar;
@@ -291,7 +305,8 @@ public class Alterar extends javax.swing.JFrame {
                     lista.get(num).getNome(),
                     lista.get(num).getCpf(),
                     lista.get(num).getDatNasc(),
-                    lista.get(num).getPeso()
+                    lista.get(num).getPeso(),
+                    lista.get(num).getAltura()
                 });
             }
         }
@@ -307,6 +322,7 @@ public class Alterar extends javax.swing.JFrame {
         txtCpfAlterar.setText(tabelaListar.getModel().getValueAt(setar, 1).toString());
         txtDataNasc.setText(tabelaListar.getModel().getValueAt(setar, 2).toString());
         txtPesoAlterar.setText(tabelaListar.getModel().getValueAt(setar, 3).toString());
+        txtAlturaAltera.setText(tabelaListar.getModel().getValueAt(setar, 4).toString());
     }
     
     private void alterarAluno(){
@@ -314,11 +330,13 @@ public class Alterar extends javax.swing.JFrame {
         String nome;
         String datNasc;
         float peso;
+        float altura;
         
         nome = txtNomeAlterar.getText();
         datNasc = txtDataNasc.getText();
         cpf = txtCpfAlterar.getText();
         peso = Float.parseFloat(txtPesoAlterar.getText());
+        altura = Float.parseFloat(txtAlturaAltera.getText());
         
         
         Aluno objaltera1 = new Aluno();
@@ -326,6 +344,7 @@ public class Alterar extends javax.swing.JFrame {
         objaltera1.setCpf(cpf);
         objaltera1.setPeso(peso);
         objaltera1.setDatNasc(datNasc);
+        objaltera1.setAltura(altura);
         
         AlunoDAO objaluno1 = new AlunoDAO();
         objaluno1.alterarAluno(objaltera1);

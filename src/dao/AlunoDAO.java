@@ -38,7 +38,7 @@ public class AlunoDAO {
     PreparedStatement pstm;
     
     public void inserirAluno(Aluno objaluno1){
-        String sql = "insert into aluno (cpf_aluno, aluno_nome, dat_nasc, peso) values(?,?,?,?)";
+        String sql = "insert into aluno (cpf_aluno, aluno_nome, dat_nasc, peso, altura) values(?,?,?,?,?)";
         
         
         conn = new ConnectionFactory().getConnection();
@@ -49,6 +49,7 @@ public class AlunoDAO {
             pstm.setString(2, objaluno1.getNome());
             pstm.setString(3, objaluno1.getDatNasc());
             pstm.setFloat(4, objaluno1.getPeso());
+            pstm.setFloat(5, objaluno1.getAltura());
             
             pstm.execute();
             pstm.close();
@@ -73,6 +74,7 @@ public class AlunoDAO {
                 objaluno1.setCpf(rs.getString("cpf_aluno"));
                 objaluno1.setDatNasc(rs.getString("dat_nasc"));
                 objaluno1.setPeso(rs.getFloat("peso"));
+                objaluno1.setAltura(rs.getFloat("altura"));
                 
                 lista.add(objaluno1);
             }
@@ -84,7 +86,7 @@ public class AlunoDAO {
     }
     
     public void alterarAluno(Aluno objaluno1){
-        String sql = "update aluno set aluno_nome = ?, peso = ?, dat_nasc = ? where cpf_aluno = ?";
+        String sql = "update aluno set aluno_nome = ?, peso = ?, dat_nasc = ?, altura = ?    where cpf_aluno = ?";
         
         conn = new ConnectionFactory().getConnection();
         
@@ -93,7 +95,9 @@ public class AlunoDAO {
             pstm.setString(1, objaluno1.getNome());
             pstm.setFloat(2, objaluno1.getPeso());
             pstm.setString(3, objaluno1.getDatNasc());
-            pstm.setString(4, objaluno1.getCpf());
+            pstm.setFloat(4, objaluno1.getAltura());
+            pstm.setString(5, objaluno1.getCpf());
+            
             
            
             
@@ -107,7 +111,7 @@ public class AlunoDAO {
     }
     
     public void excluirAluno(Aluno objaluno1){
-        String sql = "delete * from aluno where cpf_aluno = ?";
+        String sql = "delete from aluno where cpf_aluno =?";
         
         conn = new ConnectionFactory().getConnection();
         
