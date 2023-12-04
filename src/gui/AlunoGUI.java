@@ -36,7 +36,7 @@ public class AlunoGUI extends javax.swing.JFrame {
         txtNome = new javax.swing.JTextField();
         btnInserir = new javax.swing.JButton();
         btnAtualizar = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        txtSair = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtCpf = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -76,10 +76,10 @@ public class AlunoGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("sair");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        txtSair.setText("sair");
+        txtSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                txtSairActionPerformed(evt);
             }
         });
 
@@ -99,7 +99,7 @@ public class AlunoGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("peso");
+        jLabel5.setText("Peso");
 
         txtPeso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +113,7 @@ public class AlunoGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("altura");
+        jLabel6.setText("Altura");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,12 +122,6 @@ public class AlunoGUI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnInserir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAtualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -138,18 +132,26 @@ public class AlunoGUI extends javax.swing.JFrame {
                         .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCpf))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDatNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 78, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNome)))
+                        .addComponent(txtNome))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(233, 233, 233))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDatNasc))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnInserir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnAtualizar)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtSair)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -175,7 +177,7 @@ public class AlunoGUI extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
+                    .addComponent(txtSair)
                     .addComponent(btnInserir)
                     .addComponent(btnAtualizar))
                 .addContainerGap())
@@ -213,10 +215,10 @@ public class AlunoGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void txtSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSairActionPerformed
         // TODO add your handling code here:
         System.exit(0);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_txtSairActionPerformed
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
         // TODO add your handling code here:
@@ -334,7 +336,6 @@ public class AlunoGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnInserir;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -347,5 +348,6 @@ public class AlunoGUI extends javax.swing.JFrame {
     private javax.swing.JTextField txtDatNasc;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtPeso;
+    private javax.swing.JButton txtSair;
     // End of variables declaration//GEN-END:variables
 }

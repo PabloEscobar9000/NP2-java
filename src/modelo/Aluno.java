@@ -14,8 +14,7 @@ public class Aluno {
     private String DatNasc;
     private float peso;
     private float altura;
-    
-    private int idAluno;
+    private int idAluno;    
 
     public String getCpf() {
         return cpf;
